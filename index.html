@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I’m Sorry, My Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      color: #e63946;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .heart {
+      font-size: 40px;
+      animation: beat 1.2s infinite;
+      color: #e63946;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #e63946;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #c1121f;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 15px;
+      color: #222;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* floating hearts */
+    .floating-heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 20px;
+      color: rgba(255, 0, 100, 0.7);
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>I’m Really Sorry</h1>
+
+    <p>
+      Mero budii , I should have said to you this honestly.  
+      I went out with my friends and I didn’t tell you kina ki mobile off vathyo aani tei charge garna deko aani paxi vanna birsexa , and that was my mistake.
+      I understand why you’re angry, and you have every right to be.
+    </p>
+
+    <p>
+      I never wanted to hide anything from you or hurt your feelings.
+      I should have told you, because you deserve honesty, respect, and reassurance.
+      Please know that nothing matters more to me than **you**.
+    </p>
+
+    <p>
+      I’m sorry for making you feel ignored or unimportant.
+      You are my peace, my comfort, and my favorite person.
+    </p>
+
+    <button onclick="showMessage()">Tap 😔</button>
+
+    <p class="hidden" id="extra">
+      Take a deep breath, my love 🌸  
+      I’m right here, owning my mistake, ready to fix it,  
+      and promising to communicate better because I don’t want to lose your smile.
+      Please forgive me when you’re ready ❤️ sorry testhera tw mobile pani off theyo aani last ma hiddni bela ma tei chargegarna pathyera aako aani paxi birsexa 😥😭😭
+    </p>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("extra").style.display = "block";
+    }
+
+    // floating hearts generator
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }, 400);
+  </script>
+
+</body>
+</html>
